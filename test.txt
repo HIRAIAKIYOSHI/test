@@ -9,7 +9,11 @@ int main(int,char**)
 int i;
 string j;
 
+for(int i=0;i<10;i++)
+{
 printf("aaa");
+}
+
 
 return 0;
 
