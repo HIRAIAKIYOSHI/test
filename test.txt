@@ -1,2 +1,13 @@
-DPFDPFDPFDPFDPFDPF
-satanicsatanicsatanic
+#include<stdio>
+
+
+int main(event e){
+
+int i;
+string j;
+
+printf("aaa");
+
+return 0;
+
+}
