@@ -1,0 +1,910 @@
+int pokayaku(int* te, int* c);
+void kuizu(int i);
+void st(int j,int l);
+void janken(int m);
+void poka(int* j, int* x);
+
+
+int main()
+{
+	int kaitou = 0;
+	int k = 0;
+	int g = 1;
+
+
+	cout << "どれを行いますか?\n";
+	cout << "0:クイズ\n";
+	cout << "1:さいころ対決\n";
+	cout << "2:じゃんけん対決\n";
+	cout << "3:ポーカー\n";
+	cin >> k;
+
+	cout << endl;
+
+	do {
+
+		srand((unsigned int)time(NULL));
+
+	if (k == 0)
+	{
+		int l = rand() %3 +1;
+
+		kuizu(l); 
+	}
+	else if (k == 1)
+	{
+		st(rand() % 6 +1, rand() % 6 + 1);
+	}
+	else if (k == 2)
+	{
+
+		janken(rand() % 3);
+
+	}
+	else if (k == 3)
+	{
+		int tef[5];
+		int tefy[5];
+
+
+			for (int i = 0; i < 5; i++)
+			{
+				tef[i] = rand() % 13 + 1;
+				tefy[i] = rand() % 13 + 1;
+			}
+			poka(tef, tefy);
+	}
+	else {
+
+
+	}
+
+	cout << "もう一度行いますか?\n";
+	cout << "1:はい\n";
+	cout << "2:いいえ\n";
+
+	cin >> g;
+
+	if (g > 2 || g == 0)
+	{
+		cout << "終了します!!\n";
+		g = 2;
+	}
+	else if (g == 2)
+	{
+		cout << "別のゲームをしますか?\n";
+		cout << "1:はい\n";
+		cout << "2:いいえ\n";
+
+		cin >> g;
+
+		if (g >= 2 || g == 0)
+		{
+			cout << "終了します!!\n";
+			g = 2;
+		}
+
+		else
+		{
+			cout << "どれを行いますか?\n";
+			cout << "0:クイズ\n";
+			cout << "1:さいころ対決\n";
+			cout << "2:じゃんけん対決\n";
+			cout << "3:ポーカー\n";
+			cin >> k;
+		}
+		
+
+	}
+
+	} while (g == 1);
+	
+	return 0;
+
+}
+
+
+
+void kuizu(int i)
+{
+
+	int kaitou = 0;
+
+	if (i == 0)
+	{
+
+		cout << "問題\n";
+		cout << "私の一番好きなバンドは何でしょう?\n";
+		cout << "1～4の中から選んでください\n";
+		cout << "1:SHISHAMO\n";
+		cout << "2:coldrain\n";
+		cout << "3:ポルノグラフィティ\n";
+		cout << "4:Revision of sence\n";
+
+		while (1)
+		{
+			cin >> kaitou;
+
+			if (kaitou == 2)
+			{
+				cout << "正解です\n" << endl;
+				cin.get(); //enterで次に
+				break;
+			}
+			else if (kaitou == 1 || kaitou == 3 || kaitou == 4)
+			{
+				cout << "残念違います\n";
+
+			}
+			else
+			{
+				cout << "1～4の中から選んでください\n" << endl;
+			}
+
+			cout << "1～4の中から選んでください\n";
+
+		}
+
+	}
+
+	else if (i == 1)
+	{
+
+		cout << "問題\n";
+		cout << "私が邦楽ロックを好きになった原点のバンドは何でしょう?\n";
+		cout << "1～4の中から選んでください\n";
+		cout << "1:[ALEXSANDROS]\n";
+		cout << "2:crossfaith\n";
+		cout << "3:BUMP OF CHIKINE\n";
+		cout << "4:キュウソネコカミ\n";
+
+		while (1)
+		{
+			cin >> kaitou;
+
+			if (kaitou == 1)
+			{
+				cout << "正解です\n" << endl;
+				cin.get(); //enterで次に
+				break;
+			}
+			else if (kaitou == 2 || kaitou == 3 || kaitou == 4)
+			{
+				cout << "残念違います\n";
+
+			}
+			else
+			{
+				cout << "1～4の中から選んでください\n" << endl;
+			}
+
+			cout << "1～4の中から選んでください\n";
+		}
+
+	}
+
+	else
+	{
+
+		cout << "問題\n";
+		cout << "1～4の中で私が好きなバンドはどれでしょう?\n";
+		cout << "1:FOMARE\n";
+		cout << "2:サカナクション\n";
+		cout << "3:RADWIMPS\n";
+		cout << "4:My Hair is bad\n";
+
+		while (1)
+		{
+			cin >> kaitou;
+
+			if (kaitou == 4)
+			{
+				cout << "正解です\n" << endl;
+				cin.get(); //enterで次に
+				break;
+			}
+			else if (kaitou == 1 || kaitou == 2 || kaitou == 3)
+			{
+				cout << "残念違います\n";
+
+			}
+			else
+			{
+				cout << "1～4の中から選んでください\n" << endl;
+			}
+
+			cout << "1～4の中から選んでください\n";
+		}
+
+	}
+
+	return;
+}
+
+
+
+void st(int j,int l)
+{
+
+	int you;
+	int i;
+
+	you = j;
+
+	cout << "相手がサイコロを振りました\n";
+
+	cout << you << endl;
+
+	cout << "サイコロを振ってください\n";
+
+	cin.get(); //enterで次に
+
+	cin.get(); //enterで次に
+
+	i = l;
+
+	cout << i << endl;
+
+	if (you < i)
+	{
+		cout << "あなたの勝ちです\n";
+
+	}
+
+	else if (you > i)
+	{
+		cout << "あなたの負けです\n";
+	}
+
+	else
+	{
+
+		cout << "引き分けです\n";
+	}
+
+	cin.get(); //enterで次に
+
+	return;
+}
+
+
+
+void janken(int m)
+{
+
+	int kaitou = 0;
+
+	while (1) {
+		cout << "じゃんけん\n";
+		cout << "0:グー\n";
+		cout << "1:チョキ\n";
+		cout << "2:パー\n";
+
+		cin >> kaitou;
+
+		if (kaitou == m)
+		{
+			if (kaitou == 0)
+			{
+				cout << "自分:グー\n";
+				cout << "相手:グー\n";
+			}
+			else if (kaitou == 1) {
+				cout << "自分:チョキ\n";
+				cout << "相手:チョキ\n";
+			}
+			else {
+				cout << "自分:パー\n";
+				cout << "相手:パー\n";
+			}
+			cout << "あいこです\n";
+			cin.get(); //enterで次に);
+
+
+		}
+		else if (kaitou == 0)
+		{
+			if (m == 1)
+			{
+				cout << "自分:グー\n";
+				cout << "相手:チョキ\n";
+				cout << "あなたの勝利です\n" << endl;
+			}
+			else if (m == 2) {
+				cout << "自分:グー\n";
+				cout << "相手:パー\n";
+				cout << "あなたの敗北です\n" << endl;
+			}
+
+			cin.get(); //enterで次に
+
+			break;
+		}
+
+		else if (kaitou == 1)
+		{
+			if (m == 0)
+			{
+				cout << "自分:チョキ\n";
+				cout << "相手:グー\n";
+				cout << "あなたの敗北です\n" << endl;
+			}
+			else if (m == 2) {
+				cout << "自分:チョキ\n";
+				cout << "相手:パー\n";
+				cout << "あなたの勝利です\n" << endl;
+			}
+
+			cin.get(); //enterで次に
+
+			break;
+		}
+
+		else if (kaitou == 2)
+		{
+			if (m == 0)
+			{
+				cout << "自分:パー\n";
+				cout << "相手:グー\n";
+				cout << "あなたの勝利です\n";
+			}
+			else if (m == 1) {
+				cout << "自分:パー\n";
+				cout << "相手:チョキ\n";
+				cout << "あなたの敗北です\n";
+			}
+
+			cin.get(); //enterで次に
+
+			break;
+		}
+
+		else {
+
+			cout << "0～2を選択してください\n";
+
+		}
+
+
+	}
+
+	return;
+}
+
+
+
+void poka(int* j, int* x)
+{
+
+	int tefuda[5];
+	int tefuday[5];
+	int c[2] = { 0,0 };
+	int changei[5], changey[5];
+	int h, b = 0, v = 0, m = 0, n = 0, l;
+	int yakui, yakuy;
+	int yaku1, yaku2, yaku1y, yaku2y;
+
+	for (int i = 0; i < 5; i++) {
+		tefuda[i] = *(j + i);
+		tefuday[i] = *(x + i);
+		if (i == 4)
+		{
+			sote(tefuda, 5);
+			sote(tefuday, 5);
+			cout << endl;
+
+			cout << "ポーカーを始めます\n";
+			cout << endl;
+			cout << "自分の手札\n";
+
+			for (int k = 0; k < 5; k++) {
+				cout << tefuda[k] << "  ";
+			}
+
+		//	cout << endl;
+		//  cout << endl;
+		//	cout << "相手の手札\n";
+		//  cout << endl;
+
+		//	for (int k = 0; k < 5; k++) {
+		//	cout << tefuday[k] << "  ";
+		//	}
+
+		}
+	}
+	cout << endl;
+	cout << endl;
+	do
+	{
+		cout << "手札を交換しますか?\n";
+		cout << "1:はい\n";
+		cout << "2:いいえ\n";
+		cin >> h;
+		if (h == 1)
+		{
+			do
+			{
+				cout << "交換する数字を1つ入力してください\n";
+				cin >> changei[v];
+
+				if (changei[v] > 13 || changei[v] == 0)
+				{
+					cout << "1～13の中から交換する数字を1つ入力してください\n";
+
+				}
+				else
+				{
+					b = b + 1;
+					cout << "まだ交換しますか?\n";
+					cout << "1:はい\n";
+					cout << "2:いいえ\n";
+					cin >> h;
+
+					if (h == 1)
+					{
+						x = x + 1;
+					}
+					else if (h == 2)
+					{
+
+						break;
+					}
+					else
+					{
+						cout << "1か2を選択してください\n";
+					}
+				}
+			} while (1);
+
+			srand((unsigned int)time(NULL));
+
+			for (int w = 0; w < 5; w++)
+			{
+				for (int y = 0; y < b; y++)
+				{
+					if (tefuda[w] == changei[y])
+					{
+						tefuda[w] = rand() % 13 + 1;
+					}
+				}
+				sote(tefuda, 5);
+			}
+
+			yakuy = pokayaku(tefuday, c);
+			yaku1y = *c;
+			yaku2y = *(c + 1);
+
+			for (int z = 0; z < 5; z++)
+			{
+				if (yakuy == 3)
+				{
+					if (tefuday[z] != *c)
+					{
+						if (m == 0)
+						{
+							m = z;
+						}
+						else
+						{
+							n = z;
+							tefuday[m] = rand() % 13 + 1;
+							tefuday[n] = rand() % 13 + 1;
+
+							m = 0;
+							n = 0;
+
+							break;
+						}
+					}
+				}
+				else if (yakuy == 2)
+				{
+					if (tefuday[z] != *c)
+					{
+						if (tefuday[z] != *(c + 1))
+						{
+							tefuday[z] = rand() % 13 + 1;
+							break;
+						}
+					}
+				}
+				else if (yakuy == 1)
+				{
+					if (tefuday[z] != *c)
+					{
+						if (m == 0 && z == 0)
+						{
+							m = 6;
+						}
+						else if (m == 0 && z != 0)
+						{
+							m = z;
+						}
+						else
+						{
+							if (n == 0)
+							{
+								n = z;
+							}
+							else
+							{
+								l = z;
+								if (m == 6) {
+									m = 0;
+								}
+								tefuday[m] = rand() % 13 + 1;
+								tefuday[n] = rand() % 13 + 1;
+								tefuday[l] = rand() % 13 + 1;
+
+								m = 0;
+								n = 0;
+								l = 0;
+
+								break;
+							}
+						}
+					}
+				}
+				else if (yakuy == 0)
+				{
+					tefuday[z] = rand() % 13 + 1;
+				}
+			}
+			sote(tefuday, 5);
+
+			break;
+		}
+		else if (h == 2)
+		{
+
+			srand((unsigned int)time(NULL));
+
+			yakuy = pokayaku(tefuday, c);
+			yaku1y = *c;
+			yaku2y = *(c + 1);
+
+			for (int z = 0; z < 5; z++)
+			{
+				if (yakuy == 3)
+				{
+					if (tefuday[z] != *c)
+					{
+						if (m == 0)
+						{
+							m = z;
+						}
+						else
+						{
+							n = z;
+							tefuday[m] = rand() % 13 + 1;
+							tefuday[n] = rand() % 13 + 1;
+
+							m = 0;
+							n = 0;
+
+							break;
+						}
+					}
+				}
+				else if (yakuy == 2)
+				{
+					if (tefuday[z] != *c)
+					{
+						if (tefuday[z] != *(c + 1))
+						{
+							tefuday[z] = rand() % 13 + 1;
+
+							break;
+						}
+					}
+				}
+				else if (yakuy == 1)
+				{
+					if (tefuday[z] != *c)
+					{
+						if (m == 0 && z == 0)
+						{
+							m = 6;
+						}
+						else if (m == 0 && z != 0)
+						{
+							m = z;
+						}
+						else
+						{
+							if (n == 0)
+							{
+								n = z;
+							}
+							else
+							{
+								l = z;
+
+								if (m == 6) {
+									m = 0;
+								}
+								tefuday[m] = rand() % 13 + 1;
+								tefuday[n] = rand() % 13 + 1;
+								tefuday[l] = rand() % 13 + 1;
+
+								m = 0;
+								n = 0;
+								l = 0;
+
+								break;
+
+							}
+						}
+					}
+				}
+				else if (yakuy == 0)
+				{
+					tefuday[z] = rand() % 13 + 1;
+				}
+			}
+			sote(tefuday, 5);
+
+			break;
+		}
+		else
+		{
+			cout << "1か2を選択してください\n";
+		}
+	} while (1);
+
+	cout << "勝負\n" << endl;
+	cin.get(); //enterで次に
+
+	yakui = pokayaku(tefuda, c);
+	yaku1 = *c;
+	yaku2 = *(c + 1);
+
+	cout << "自分の手札 :" << endl;
+	for (int k = 0; k < 5; k++) {
+		cout << tefuda[k] << "  ";
+	}
+	cout << endl;
+
+	if (yakui == 6)
+	{
+		cout << "4カード\n";
+	}
+	else if (yakui == 4 || yakui == 5)
+	{
+		cout << "フルハウス\n";
+
+	}
+	else if (yakui == 3)
+	{
+		cout << "3カード\n";
+	}
+	else if (yakui == 2)
+	{
+		cout << "2ペア\n";
+	}
+	else if (yakui == 1)
+	{
+		cout << "1ペア\n";
+
+	}
+	else
+	{
+		cout << "約無し\n";
+
+	}
+	yakuy = pokayaku(tefuday, c);
+	yaku1y = *c;
+	yaku2y = *(c + 1);
+
+	cout << endl;
+	cout << "相手の手札 :" << endl;
+	for (int k = 0; k < 5; k++) {
+		cout << tefuday[k] << "  ";
+	}
+	cout << endl;
+	if (yakuy == 6)
+	{
+		cout << "4カード\n";
+	}
+	else if (yakuy == 4 || yakuy == 5)
+	{
+		cout << "フルハウス\n";
+	}
+	else if (yakuy == 3)
+	{
+		cout << "3カード\n";
+	}
+	else if (yakuy == 2)
+	{
+		cout << "2ペア\n";
+	}
+	else if (yakuy == 1)
+	{
+		cout << "1ペア\n";
+	}
+	else
+	{
+		cout << "約無し\n";
+	}
+	cout << endl;
+
+	if (yakui > yakuy)
+	{
+		cout << "あなたの勝ちです\n";
+	}
+	else if (yakui < yakuy)
+	{
+		cout << "あなたの負けです\n";
+	}
+	else
+	{
+		if (yakui == 6)
+		{
+			if (yaku1 > yaku1y)
+			{
+				cout << "あなたの勝ちです\n";
+			}
+			else if (yaku1 == yaku1y)
+			{
+				cout << "引き分けです\n";
+			}
+			else
+			{
+				cout << "あなたの負けです\n";
+			}
+		}
+		else if (yakui == 5)
+		{
+			if (yaku1 > yaku1y)
+			{
+				cout << "あなたの勝ちです\n";
+			}
+			else if (yaku1 == yaku1y)
+			{
+				cout << "引き分けです\n";
+			}
+			else
+			{
+				cout << "あなたの負けです\n";
+			}
+		}
+		else if (yakui == 4)
+		{
+			if (yaku2 > yaku2y)
+			{
+				cout << "あなたの勝ちです\n";
+			}
+			else if (yaku2 == yaku2y)
+			{
+				cout << "引き分けです\n";
+			}
+			else
+			{
+				cout << "あなたの負けです\n";
+			}
+		}
+		else if (yakui == 3)
+		{
+			if (yaku1 < yaku2)
+			{
+				yaku1 = yaku2;
+			}
+			if (yaku1y < yaku2y)
+			{
+				yaku1 = yaku2;
+			}
+			if (yaku1 > yaku1y)
+			{
+				cout << "あなたの勝ちです\n";
+			}
+			else if (yaku1 == yaku1y)
+			{
+				cout << "引き分けです\n";
+			}
+			else
+			{
+				cout << "あなたの負けです\n";
+			}
+
+		}
+		else if (yakui == 2)
+		{
+			if (yaku1 > yaku1y)
+			{
+				cout << "あなたの勝ちです\n";
+			}
+			else if (yaku1 == yaku1y)
+			{
+				cout << "引き分けです\n";
+			}
+			else
+			{
+				cout << "あなたの負けです\n";
+			}
+		}
+		else if (yakui == 1)
+		{
+			if (yaku1 > yaku1y)
+			{
+				cout << "あなたの勝ちです\n";
+			}
+			else if (yaku1 == yaku1y)
+			{
+				cout << "引き分けです\n";
+			}
+			else
+			{
+				cout << "あなたの負けです\n";
+			}
+		}
+		else
+		{
+			cout << "2人とも約無しです\n";
+
+		}
+	}
+	cin.get(); //enterで次に
+
+	return;
+
+}
+
+int pokayaku(int* te, int* c)
+{
+	int f = 0;
+	int g = 0;
+	int h = 0;
+	*c = 0;
+	*(c + 1) = 0;
+
+
+	for (int j = 0; j < 4; j++)
+	{
+		if (*(te + j) == *(te + j + 1))
+		{
+			if (*c == 0)
+			{
+				g = g + 1;
+				*c = *(te + j);
+			}
+			else if (*c == *(te + j))
+			{
+				g = g + 1;
+
+			}
+			else
+			{
+				f = f + 1;
+				*(c + 1) = *(te + j);
+			}
+		}
+	}
+
+	if (g == 3)
+	{
+		h = 6;
+	}
+	else if (g == 2 && f == 1)
+	{
+		h = 5;
+	}
+	else if (g == 1 && f == 2)
+	{
+		h = 4;
+	}
+	else if (g == 2)
+	{
+		h = 3;
+	}
+	else if (g == 1 && f == 1)
+	{
+		h = 2;
+	}
+	else if (g == 1)
+	{
+		h = 1;
+	}
+
+	return h;
+}
+
